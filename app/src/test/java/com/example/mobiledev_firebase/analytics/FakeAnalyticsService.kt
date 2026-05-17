@@ -1,4 +1,4 @@
-package com.example.mobileedv_firebase.analytics
+package com.example.mobiledev_firebase.analytics
 
 import android.util.Log
 import com.example.core.analytics.AnalyticsService

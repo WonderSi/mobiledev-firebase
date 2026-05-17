@@ -1,4 +1,4 @@
-package com.example.mobileedv_firebase.auth
+package com.example.mobiledev_firebase.auth
 
 import com.example.core.auth.AuthService
 import com.example.core.auth.TokenRepository

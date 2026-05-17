@@ -1,4 +1,4 @@
-package com.example.mobileedv_firebase.login
+package com.example.mobiledev_firebase.login
 
 import androidx.lifecycle.ViewModel
 import com.example.core.analytics.AnalyticsService

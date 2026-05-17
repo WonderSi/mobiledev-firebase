@@ -1,4 +1,4 @@
-package com.example.mobileedv_firebase
+package com.example.mobiledev_firebase
 
 import android.os.Bundle
 import android.view.Menu
@@ -7,8 +7,8 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.example.mobileedv_firebase.databinding.ActivityMainBinding
-import com.example.mobileedv_firebase.login.LoginViewModel
+import com.example.mobiledev_firebase.databinding.ActivityMainBinding
+import com.example.mobiledev_firebase.login.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

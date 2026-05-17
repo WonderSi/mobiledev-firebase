@@ -1,7 +1,7 @@
-package com.example.mobileedv_firebase.di
+package com.example.mobiledev_firebase.di
 
 import com.example.core.analytics.AnalyticsService
-import com.example.mobileedv_firebase.analytics.AppMetricaAnalyticsService
+import com.example.mobiledev_firebase.analytics.AppMetricaAnalyticsService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

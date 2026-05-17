@@ -1,10 +1,10 @@
-package com.example.mobileedv_firebase.di
+package com.example.mobiledev_firebase.di
 
 import android.content.Context
 import com.example.core.auth.AuthService
 import com.example.core.auth.TokenRepository
-import com.example.mobileedv_firebase.auth.AuthServiceImpl
-import com.example.mobileedv_firebase.auth.TokenRepositoryImpl
+import com.example.mobiledev_firebase.auth.AuthServiceImpl
+import com.example.mobiledev_firebase.auth.TokenRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

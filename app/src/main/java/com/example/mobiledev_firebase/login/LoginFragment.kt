@@ -1,4 +1,4 @@
-package com.example.mobileedv_firebase.login
+package com.example.mobiledev_firebase.login
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,8 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.example.mobileedv_firebase.R
-import com.example.mobileedv_firebase.databinding.FragmentLoginBinding
+import com.example.mobiledev_firebase.R
+import com.example.mobiledev_firebase.databinding.FragmentLoginBinding
 import com.vk.id.AccessToken
 import com.vk.id.VKID
 import com.vk.id.VKIDAuthFail

@@ -14,13 +14,13 @@ val localProperties = Properties().apply {
 }
 
 android {
-    namespace = "com.example.mobileedv_firebase"
+    namespace = "com.example.mobiledev_firebase"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "com.example.mobileedv_firebase"
+        applicationId = "com.example.mobiledev_firebase"
         minSdk = 24
         targetSdk = 36
         versionCode = 1

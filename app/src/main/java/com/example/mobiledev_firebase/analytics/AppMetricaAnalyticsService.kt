@@ -1,4 +1,4 @@
-package com.example.mobileedv_firebase.analytics
+package com.example.mobiledev_firebase.analytics
 
 import com.example.core.analytics.AnalyticsService
 import io.appmetrica.analytics.AppMetrica

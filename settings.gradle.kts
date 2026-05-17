@@ -36,7 +36,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "mobileedv-firebase"
+rootProject.name = "mobiledev-firebase"
 include(":app")
 include(":core")
 include(":core:navigation")
