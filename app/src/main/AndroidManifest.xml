@@ -17,6 +17,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mobiledevfirebase"
         tools:replace="android:allowBackup,android:label,android:theme,android:supportsRtl">
+        <service
+            android:name=".messaging.PushMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
