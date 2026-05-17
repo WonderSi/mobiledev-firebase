@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.mobileedv_firebase.login.LoginFragment"
+        android:label="Login">
+        <action
+            android:id="@+id/action_login_to_habits"
+            app:destination="@id/nav_habits"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <include app:graph="@navigation/nav_habits" />
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.mobileedv_firebase.about.AboutFragment"
+        android:label="О нас" />
+
+</navigation>
