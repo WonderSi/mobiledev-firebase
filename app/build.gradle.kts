@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.google.services)
 }
 
 // Читаем local.properties
@@ -108,6 +109,10 @@ dependencies {
     // Задание 3 — Яндекс MapKit
     // Задание 3 — Yandex MapKit
     implementation(libs.yandex.mapkit)
+
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.messaging)
+    implementation(libs.firebase.analytics)
 
     testImplementation(libs.junit)
     testImplementation(libs.konsist)
