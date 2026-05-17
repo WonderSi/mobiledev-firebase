@@ -22,4 +22,9 @@
         android:name="com.example.mobiledev_firebase.about.AboutFragment"
         android:label="О нас" />
 
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.mobiledev_firebase.profile.ProfileFragment"
+        android:label="Профиль" />
+
 </navigation>

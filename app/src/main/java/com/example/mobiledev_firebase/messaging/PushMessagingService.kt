@@ -9,18 +9,31 @@ import android.util.Log
 import androidx.core.app.NotificationCompat
 import com.example.mobiledev_firebase.MainActivity
 import com.example.mobiledev_firebase.R
+import com.example.mobiledev_firebase.firestore.UserFirestoreRepository
+import com.example.mobiledev_firebase.login.LoginViewModel
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class PushMessagingService : FirebaseMessagingService() {
+
+    @Inject lateinit var firestoreRepository: UserFirestoreRepository
 
     override fun onNewToken(token: String) {
         super.onNewToken(token)
         Log.d(TAG, "FCM Token: $token")
-        getSharedPreferences(FCM_PREFS, MODE_PRIVATE)
+        getSharedPreferences(LoginViewModel.PREFS_NAME, MODE_PRIVATE)
             .edit()
-            .putString(KEY_FCM_TOKEN, token)
+            .putString(LoginViewModel.KEY_FCM_TOKEN, token)
             .apply()
+
+        val userId = getSharedPreferences(LoginViewModel.PREFS_NAME, MODE_PRIVATE)
+            .getString(LoginViewModel.KEY_USER_ID, null)
+        if (userId != null) {
+            firestoreRepository.updateFcmToken(userId, token)
+        }
     }
 
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
@@ -32,7 +45,6 @@ class PushMessagingService : FirebaseMessagingService() {
             handleDataMessage(remoteMessage.data)
         }
 
-        // Notification message — попадает сюда только в foreground
         remoteMessage.notification?.let { notification ->
             showNotification(
                 title = notification.title ?: "Уведомление",
@@ -87,8 +99,6 @@ class PushMessagingService : FirebaseMessagingService() {
 
     companion object {
         const val CHANNEL_ID = "push_channel_default"
-        const val FCM_PREFS = "fcm_prefs"
-        const val KEY_FCM_TOKEN = "fcm_token"
         private const val TAG = "FCMService"
     }
 }

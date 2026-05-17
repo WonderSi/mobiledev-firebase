@@ -55,8 +55,10 @@ class MainActivity : AppCompatActivity() {
             supportActionBar?.setDisplayShowTitleEnabled(false)
             val isLogin = destination.id == R.id.loginFragment
             val isAbout = destination.id == R.id.aboutFragment
+            val isProfile = destination.id == R.id.profileFragment
             binding.toolbar.menu.findItem(R.id.action_logout)?.isVisible = !isLogin
             binding.toolbar.menu.findItem(R.id.action_about)?.isVisible = !isLogin && !isAbout
+            binding.toolbar.menu.findItem(R.id.action_profile)?.isVisible = !isLogin && !isProfile
         }
     }
 
@@ -75,11 +77,16 @@ class MainActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu_main, menu)
         menu.findItem(R.id.action_logout)?.isVisible = false
         menu.findItem(R.id.action_about)?.isVisible = false
+        menu.findItem(R.id.action_profile)?.isVisible = false
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+            R.id.action_profile -> {
+                navController.navigate(R.id.profileFragment)
+                true
+            }
             R.id.action_about -> {
                 navController.navigate(R.id.aboutFragment)
                 true
